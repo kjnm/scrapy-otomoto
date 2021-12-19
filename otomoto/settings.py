@@ -22,7 +22,7 @@ NEWSPIDER_MODULE = 'otomoto.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -30,7 +30,7 @@ ROBOTSTXT_OBEY = True
 #DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
-#CONCURRENT_REQUESTS_PER_IP = 16
+#CONCURRENT_REQUESTS_PER_IP = 2
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -89,3 +89,11 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+IMAGES_STORE = 'D:\\images'  # folder name or path where to save images
+DOWNLOAD_DELAY = 0  # delay in downloading images
+DOWNLOAD_TIMEOUT = 10
+
+
+ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
